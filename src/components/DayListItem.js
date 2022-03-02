@@ -4,8 +4,6 @@ import classNames from "classnames";
 
 
 export default function dayListItem(props) {
-
-  console.log('props are' + props);
   
   const formatSpots = (spots) => {
     let text = `${spots} spots remaining `;

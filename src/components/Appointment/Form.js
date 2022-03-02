@@ -6,9 +6,10 @@ import "../Appointment/Styles.scss";
 import { useState } from 'react'
 
 export default function Form(props) {
+  console.log('form',props);
 
   const [student, setStudent] = useState(props.student || "");
-  const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const [interviewer, setInterviewer] = useState(props.interviewerId || null);
 
   const reset = () => {
     setStudent('');
@@ -20,6 +21,10 @@ export default function Form(props) {
    props.onCancel();
   };
 
+  const callSave = () => {
+    props.onSave(student,interviewer);
+  }
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
@@ -30,7 +35,7 @@ export default function Form(props) {
             type="text"
             placeholder="Enter student name"
             onChange={(event) => setStudent(event.target.value)}
-            value={props.student || student} 
+            value={student}
           />
         </form>
         <InterviewerList
@@ -43,7 +48,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger  onClick = {cancel}>Cancel</Button>
-          <Button danger onClick={props.onSave}>Confirm</Button>
+          <Button onClick={callSave}>Save</Button>
         </section>
       </section>
     </main>
