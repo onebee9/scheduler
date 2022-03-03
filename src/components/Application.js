@@ -7,12 +7,11 @@ import { useApplicationData } from 'hooks/useApplicationData';
 
 export default function Application(props) {
 
-  const { state, setDay, bookInterview, deleteInterview } = useApplicationData();
-
+  const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
 
-  // You dont get a response with put-requests
+
   const schedule = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
 
@@ -24,11 +23,10 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
-        deleteInterview={deleteInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
-
 
 
   return (

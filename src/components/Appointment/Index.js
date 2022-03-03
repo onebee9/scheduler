@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 import "../Appointment/Styles.scss";
 import Header from "./Header";
 import Show from "./Show";
@@ -31,26 +30,26 @@ export default function Appointment(props) {
    //and creates an appointment booking
    const save = (name, interviewer) => {
       const interview = {
-        student: name,
-        interviewer
+         student: name,
+         interviewer
       };
-    
+
       transition(SAVING);
-    
+
       props
-        .bookInterview(props.id, interview)
-        .then(() => transition(SHOW))
-        .catch(error => transition(ERROR_SAVE, true));
-    }
+         .bookInterview(props.id, interview)
+         .then(() => transition(SHOW))
+         .catch(error => transition(ERROR_SAVE, true));
+   }
 
 
    const deleteAppointment = async (id) => {
 
       transition(DELETING);
       props
-      .deleteInterview(props.id)
-      .then(() => {transition(EMPTY)})
-      .catch(() => transition(ERROR_DELETE, true))
+         .cancelInterview(props.id)
+         .then(() => { transition(EMPTY) })
+         .catch(() => transition(ERROR_DELETE, true))
    }
 
    return (
@@ -58,8 +57,6 @@ export default function Appointment(props) {
          <Header time={props.time} />
          {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
          {mode === EDIT && <Form onSave={save} interviewers={props.interviewers} student={props.interview.student} interviewerId={props.interview.interviewer.id} onCancel={() => back(SHOW)} />}
-
-         {/* {show && <div> ...saving </div>} */}
          {mode === SHOW && (
             <Show
                student={props.interview.student}
@@ -73,7 +70,7 @@ export default function Appointment(props) {
          {mode === DELETING && <Status message="Deleting" />}
          {mode === CONFIRM && <Confirm message="Delete the Appointment?" onCancel={() => back(SHOW)} onConfirm={deleteAppointment} />}
          {mode === ERROR_SAVE && <Error message="Could not save appointment, please try again" onClose={() => back(CREATE)} />}
-         {mode === ERROR_DELETE && <Error message="Could not save appointment, please try again" onClose={() => back(SHOW)}/>}
+         {mode === ERROR_DELETE && <Error message="Could not save appointment, please try again" onClose={() => back(SHOW)} />}
 
       </article>
    );
