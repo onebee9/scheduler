@@ -1,59 +1,4 @@
-import { getAppointmentsForDay,getInterview,getInterviewersForDay } from "./selectors";
-
-const state = {
-  days: [
-    {
-      id: 1,
-      name: "Monday",
-      appointments: [1, 2, 3],
-      interviewers : [1,2]
-    },
-    {
-      id: 2,
-      name: "Tuesday",
-      appointments: [4, 5],
-      interviewers : [1,3,4]
-    }
-  ],
-  appointments: {
-    "1": { id: 1, time: "12pm", interview: null },
-    "2": { id: 2, time: "1pm", interview: null },
-    "3": {
-      id: 3,
-      time: "2pm",
-      interview: { student: "Archie Cohen", interviewer: 2 }
-    },
-    "4": { id: 4, time: "3pm", interview: null },
-    "5": {
-      id: 5,
-      time: "4pm",
-      interview: { student: "Chad Takahashi", interviewer: 2 }
-    }
-  },
-  interviewers: {
-    "1": {  
-      "id": 1,
-      "name": "Sylvia Palmer",
-      "avatar": "https://i.imgur.com/LpaY82x.png"
-    },
-    "2": {
-      id: 2,
-      name: "Tori Malcolm",
-      avatar: "https://i.imgur.com/Nmx0Qxo.png"
-    },
-    "3": {
-      id: 2,
-      name: "Lori Holmes",
-      avatar: "https://i.imgur.com/Nmx0Qxo.png"
-    },
-    "4": {
-      id: 2,
-      name: "Cari Malvin",
-      avatar: "https://i.imgur.com/Nmx0Qxo.png"
-    }
-  }
-
-};
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "./selectors";
 
 test("getAppointmentsForDay returns an array", () => {
   const result = getAppointmentsForDay(state, "Monday");
@@ -100,8 +45,6 @@ test("getInterview returns null if no interview is booked", () => {
   expect(result).toBeNull();
 });
 
-
-
 test("getInterviewersForDay returns an array", () => {
   const result = getInterviewersForDay(state, "Monday");
   expect(Array.isArray(result)).toBe(true);
@@ -113,7 +56,7 @@ test("getInterviewersForDay returns an array with a length matching the number o
 });
 
 test("getInterviewersForDay returns an array containing the correct appointment objects", () => {
-  const [first, second,third] = getInterviewersForDay(state, "Tuesday");
+  const [first, second, third] = getInterviewersForDay(state, "Tuesday");
   expect(first).toEqual(state.interviewers["1"]);
   expect(second).toEqual(state.interviewers["3"]);
   expect(third).toEqual(state.interviewers["4"]);

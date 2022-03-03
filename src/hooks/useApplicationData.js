@@ -89,7 +89,7 @@ export const useApplicationData = () => {
   };
 
 
-  const deleteInterview = id => {
+  const cancelInterview = id => {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -111,7 +111,7 @@ export const useApplicationData = () => {
   };
 
 
-  return { state, setDay, bookInterview, deleteInterview }
+  return { state, setDay, bookInterview, cancelInterview }
 
 }
 
