@@ -30,7 +30,7 @@ npm run storybook
 
 # Scheduler Project
 
-Scheduler is a simple, single-page Interview boooking app.
+Scheduler is a simple, a modern client application using the React view library.
 
 
 ## Dependencies
