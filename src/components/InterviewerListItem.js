@@ -3,7 +3,7 @@ import classNames from "classnames";
 import "components/InterviewerListItem.scss"
 
 
-export default function dayListItem(props) {
+export default function InterviewerListItem(props) {
 
   const {name, avatar} = props;
 
