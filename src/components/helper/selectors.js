@@ -114,27 +114,4 @@ export function getInterviewersForDay(state, day) {
   return result;
 }
 
-// const getDailySPots = (availableSpotsPerday = 5, day) =>{
-
-
-// const foundName = state.days.findIndex(({ name }) => name === day);
-
-// console.log('data',foundName);
-
-//  const foundSpots = state.days[foundName].appointments.length;
-
-//  console.log(foundSpots);
- 
-// //  availableSpotsPerday - days.appointments.length
-// //   const spotsLeft = day.
-// //   get number of spots in day,
-// //   reduce by 1
-// //   return new number
-
-//  // pass function as prop to component that displays available spots.
-
-// }
-
-// console.log(getDailySPots('monday'));
-
 

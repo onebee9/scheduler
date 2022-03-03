@@ -49,7 +49,7 @@ export default function Appointment(props) {
       transition(DELETING);
       props
       .deleteInterview(props.id)
-      .then(() => transition(EMPTY))
+      .then(() => {transition(EMPTY)})
       .catch(() => transition(ERROR_DELETE, true))
    }
 
