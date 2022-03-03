@@ -1,49 +1,48 @@
 # Interview Scheduler
 
-## Setup
+### Setup
 
 Install dependencies with `npm install`.
 
-## Running Webpack Development Server
+The Interview Scheduler project has been tested with Node v12.22.7 (Vagrant & WSL) and v15.14.0 (M1) and may not work with a newer version. Please ensure that you are using this version of node. You can use Node Version Manager (nvm)to switch to v12.22.7 (Vagrant & WSL) or v15.14.0 (M1) of Node.
+
+## Testing
+The project was tested using Webpack Development Server, Storybook aand Jest.
+
+### Running Webpack Development Server
 
 ```sh
 npm start
 ```
 
-## Running Jest Test Framework
+### Running Jest Test Framework
 
 ```sh
 npm test
 ```
 
-## Running Storybook Visual Testbed
+
+### Running Storybook Visual Testbed
 
 ```sh
 npm run storybook
 ```
 
-# Tweeter Project
+# Scheduler Project
 
-Tweeter is a simple, single-page Twitter clone.
+Scheduler is a simple, single-page Interview boooking app.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
-
-## Getting Started
-
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+- axios
+- @testing-library/react-hooks
+- react-test-renderer
+- Node 5.10.x - Node v12.22.7
 
 ## Screenshots
-!["Screenshot of Interview scheduler empty state"](https://github.com/onebee9/tweeter/blob/447945c487985692497648fb3171b7fe5522ab96/docs/tweet%20form%20empty%20state.png)
-!["Screenshot of Interview scheduler error state"](https://github.com/onebee9/tweeter/blob/447945c487985692497648fb3171b7fe5522ab96/docs/Tweet%20Too%20long%20Error.png)
-!["Screenshot of Interview scheduler edit state"](https://github.com/onebee9/tweeter/blob/447945c487985692497648fb3171b7fe5522ab96/docs/tweet%20form%20empty%20state.png)
-!["Screenshot of Interview scheduler show state with spots fully booked"](https://github.com/onebee9/tweeter/blob/447945c487985692497648fb3171b7fe5522ab96/docs/Tablet%20sized%20Tweeter%20page.png)
+!["Screenshot of Interview scheduler empty state"]()
+!["Screenshot of Interview scheduler error state"]()
+!["Screenshot of Interview scheduler edit state"]()
+!["Screenshot of Interview scheduler show state with spots fully booked"]()
 
