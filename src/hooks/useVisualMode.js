@@ -3,7 +3,7 @@ import {useState} from "react";
 export default function useVisualMode(initial) {
   const [history, setHistory] = useState([initial]);
 
-  const transition = function (newMode, replace = false) {
+  const transition = (newMode, replace = false) => {
     if (!replace) {
       setHistory((prev) => [...prev, newMode]);
     } else {
@@ -11,8 +11,15 @@ export default function useVisualMode(initial) {
     }
   };
 
-  const back = function () {
+  const back = (location = "" ) =>{
     if (history.length < 2) {
+      return;
+    }
+
+    const findInhistory = history.indexOf(location);
+     
+    if(findInhistory !== -1){
+      setHistory((prev) => [...prev.slice(0, findInhistory + 1 )]);
       return;
     }
 

@@ -6,22 +6,27 @@ import "../Appointment/Styles.scss";
 import { useState } from 'react'
 
 export default function Form(props) {
-  console.log('form',props);
 
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewerId || null);
+  const [error, setError] = useState("");
 
   const reset = () => {
     setStudent('');
     setInterviewer('');
   };
 
-  const cancel = () => {
+  const Cancel = () => {
    reset();
    props.onCancel();
   };
 
-  const callSave = () => {
+  const Save = () => {
+    if (student === "") {
+      setError("Student name cannot be blank");
+      return;
+    }
+    setError("");
     props.onSave(student,interviewer);
   }
 
@@ -33,11 +38,14 @@ export default function Form(props) {
             className="appointment__create-input text--semi-bold"
             name="name"
             type="text"
-            placeholder="Enter student name"
+            placeholder= "Enter Student Name"
             onChange={(event) => setStudent(event.target.value)}
             value={student}
+            data-testid="student-name-input"
           />
+            <section className="appointment__validation">{error}</section>
         </form>
+      
         <InterviewerList
           interviewer={props.interviewer}
           interviewers={props.interviewers}
@@ -47,8 +55,8 @@ export default function Form(props) {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button danger  onClick = {cancel}>Cancel</Button>
-          <Button onClick={callSave}>Save</Button>
+          <Button danger  onClick = {Cancel}>Cancel</Button>
+          <Button onClick={Save}>Save</Button>
         </section>
       </section>
     </main>
