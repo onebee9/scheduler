@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Appointment/Styles.scss";
 import Header from "./Header";
 import Show from "./Show";
