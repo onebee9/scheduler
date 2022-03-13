@@ -17,21 +17,6 @@ export const useApplicationData = () => {
 
   }
 
-  // const spotUpdate = (weekday, day, variable) => {
-  //   let spot = day.spots;
-  //   if (weekday === day.name && variable === "REMOVE_SPOT") {
-  //     return spot - 1;
-  //   } else if (weekday === day.name && variable === "ADD_SPOT") {
-  //     return spot + 1;
-  //   } else {
-  //     return spot;
-  //   }
-  // };
-
-  // const updateSpots = (weekday, days, variable, appointments, id) => {
-
-  // };
-
   const updateSpots = function (state, appointments, id) {
     //copy array into new container;
     const newDays = [...state.days];
@@ -93,7 +78,6 @@ const bookInterview = (id, interview) => {
   return axios
     .put(`/api/appointments/${id}`, { interview })
     .then(() => {
-      console.log('appointments', state.appointments);
       newDaysArray = updateSpots(state, appointments, id);
       setState({
         ...state,

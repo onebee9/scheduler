@@ -70,7 +70,7 @@ npm run storybook
 ```
 
 ## Screenshots
-!["Screenshot of Interview scheduler empty + show states"](https://github.com/onebee9/scheduler/blob/master/docs/Screen%20Shot%202022-03-03%20at%202.24.54%20PM.png)
-!["Screenshot of Interview scheduler error state"](https://github.com/onebee9/scheduler/blob/master/docs/Screen%20Shot%202022-03-03%20at%202.26.19%20PM.png)
-!["Screenshot of Interview scheduler edit state"](https://github.com/onebee9/scheduler/blob/master/docs/Screen%20Shot%202022-03-03%20at%202.24.24%20PM.png)
+!["Screenshot of Interview scheduler empty + show states"](https://github.com/onebee9/scheduler/blob/master/docs/AppointmentHover.png)
+!["Screenshot of Interview scheduler error state"](https://github.com/onebee9/scheduler/blob/master/docs/ErrorState.png)
+!["Screenshot of Interview scheduler edit state"](https://github.com/onebee9/scheduler/blob/master/docs/EditAppointments.png)
 
