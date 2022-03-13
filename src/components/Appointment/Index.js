@@ -9,24 +9,25 @@ import Form from "./Form"
 import Confirm from "./Confirm";
 import Error from "./Error";
 
+// state options 
+const EMPTY = "EMPTY";
+const SHOW = "SHOW";
+const CREATE = "CREATE";
+const SAVING = "SAVING";
+const CONFIRM = "CONFIRM";
+const EDIT = "EDIT";
+const DELETING = "DELETING";
+const ERROR_SAVE = "ERROR_SAVE";
+const ERROR_DELETE = "ERROR_DELETE";
+
 
 export default function Appointment(props) {
-
-   const EMPTY = "EMPTY";
-   const SHOW = "SHOW";
-   const CREATE = "CREATE";
-   const SAVING = "SAVING";
-   const CONFIRM = "CONFIRM";
-   const EDIT = "EDIT";
-   const DELETING = "DELETING";
-   const ERROR_SAVE = "ERROR_SAVE";
-   const ERROR_DELETE = "ERROR_DELETE";
 
    const { mode, transition, back } = useVisualMode(
       props.interview ? SHOW : EMPTY
    );
 
-   //creates a new interview object using user provided form  data 
+   //creates a new interview object using user provided form data 
    //and creates an appointment booking
    const save = (name, interviewer) => {
       const interview = {
