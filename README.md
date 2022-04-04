@@ -1,6 +1,6 @@
-# Interview Scheduler
+# Scheduler
 
-A simple, a modern client application using the React view library.
+A simple, modern, single page client application using the React view library for students to book and manage appointments with mentors in real-time. 
 
 ### Setup
 
