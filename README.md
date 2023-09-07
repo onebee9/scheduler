@@ -1,6 +1,6 @@
 # Scheduler
 
-A simple, modern, single page client application using the React view library for students to book and manage appointments with mentors in real-time. 
+A simple, modern, single-page client application using the React view library for students to book and manage appointments with mentors in real time. 
 
 ### Setup
 
@@ -8,10 +8,9 @@ Install dependencies with `npm install`.
 
 The Interview Scheduler project has been tested with Node v12.22.7 (Vagrant & WSL) and v15.14.0 (M1) and may not work with a newer version. Please ensure that you are using this version of node. You can use Node Version Manager (nvm)to switch to v12.22.7 (Vagrant & WSL) or v15.14.0 (M1) of Node.
 
-## Dependencies
+### Dependencies
 
 Run NPM install to install all dependencies
-
 
 - React
 - @testing-library/react-hooks
@@ -25,9 +24,9 @@ Run NPM install to install all dependencies
 - Jest
 
 ## Testing
-The project was tested using Webpack Development Server, Storybook aand Jest.
+The project was tested using Webpack Development Server, Storybook and Jest.
 
-## Insalling the server
+## Installing the server
 Fork and clone scheduler-api(https://github.com/onebee9/scheduler-api) into a new directory (NOT within your current scheduler directory) on your host machine (not in a virtual machine).
 
 Follow the README.md instructions. This will involve a few steps, including:
@@ -38,9 +37,9 @@ creating a .env.development file in the root directory
 seeding the database
 running the server
 
-If we try to make a request right now, we will trigger CORS. The server is configured to allow requests from any domain.Add "proxy": "http://localhost:8001" to the package.json file in our main scheduler (React App) directory, and restart the webpack-dev-server with npm start.
+If we try to make a request right now, we will trigger CORS. The server is configured to allow requests from any domain. Add "proxy": "http://localhost:8001" to the package.json file in our main scheduler (React App) directory, and restart the webpack-dev-server with npm start.
 
-Confirm the API works by running the server and navigating to http://localhost:8001/api/days. You should get some saple data with the format below, back.
+Confirm the API works by running the server and navigating to http://localhost:8001/api/days. You should get some sample data in the format below.
 
 {
   "id":Number,
