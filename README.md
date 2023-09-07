@@ -24,7 +24,7 @@ Run NPM install to install all dependencies
 - Jest
 
 ## Testing
-The project was tested using Webpack Development Server, Storybook and Jest.
+The project was tested using Webpack Development Server, Storybook, and Jest.
 
 ## Installing the server
 Fork and clone scheduler-api(https://github.com/onebee9/scheduler-api) into a new directory (NOT within your current scheduler directory) on your host machine (not in a virtual machine).
